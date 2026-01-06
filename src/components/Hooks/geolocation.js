@@ -7,8 +7,8 @@ export function geolocation() {
         navigator.geolocation.getCurrentPosition(
             (position)=> {
                 resolve({
-                    lat: position.coords.latitude,
-                    lon: position.coords.longitude,
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
                 })
             },
             (error)=> {
