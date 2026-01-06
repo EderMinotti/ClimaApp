@@ -2,7 +2,7 @@ import SearchBar from "./components/SearchBar";
 import WeatherCard from "./components/WeatherCard";
 import "./App.css";
 import { useEffect, useState } from "react";
-import { ContainerCard } from "./components/containerCard";
+import { ContainerCard } from "./components/ContainerCard";
 import { CardPrevisaoFutura } from "./components/CardPrevisaoFutura";
 import { converterDiaSemana } from "./components/Hooks/converterDiaSemana";
 import { Loading } from "./components/Loading";
@@ -23,9 +23,7 @@ function App() {
     async function weatherFetch() {
       try {
         setLoading(true);
-        const response = await fetch(
-          fetch(`/api/weather?city=${city}`)
-        );
+        const response = await fetch(fetch(`/api/weather?city=${city}`));
         const data = await response.json();
         if (data) {
           setWeather(data.results);
@@ -38,23 +36,19 @@ function App() {
     weatherFetch();
   }, [cidade]);
 
-  
-    async function climaPorLocalizacao() {
-      try {
-        const { lat, lon } = await geolocation();
-        const response = await fetch(
-          fetch(`/api/weather?lat=${lat}&lon=${lon}`)
-        );
-        const data = await response.json();
-        if (data) {
-          setWeather(data.results);
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error("Erro ao buscar por localização", error);
+  async function climaPorLocalizacao() {
+    try {
+      const { lat, lon } = await geolocation();
+      const response = await fetch(fetch(`/api/weather?lat=${lat}&lon=${lon}`));
+      const data = await response.json();
+      if (data) {
+        setWeather(data.results);
+        setLoading(false);
       }
+    } catch (error) {
+      console.error("Erro ao buscar por localização", error);
     }
-  
+  }
 
   if (loading) {
     return <Loading />;
