@@ -17,36 +17,53 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [cidade, setCidade] = useState("São Paulo");
 
+  // Fetch por cidade
   useEffect(() => {
     const city = encodeURIComponent(cidade);
 
     async function weatherFetch() {
       try {
         setLoading(true);
-        const response = await fetch(fetch(`/api/weather?city=${city}`));
+
+        // URL sempre como string válida
+        const response = await fetch(`/api/weather?city=${city}`);
         const data = await response.json();
+
         if (data) {
           setWeather(data.results);
-          setLoading(false);
         }
       } catch (error) {
         console.error("erro na requisição", error);
+      } finally {
+        setLoading(false);
       }
     }
+
     weatherFetch();
   }, [cidade]);
 
+  // Fetch por localização
   async function climaPorLocalizacao() {
     try {
-      const { lat, lon } = await geolocation();
-      const response = await fetch(fetch(`/api/weather?lat=${lat}&lon=${lon}`));
+      setLoading(true);
+
+      // Geolocalização precisa de await
+      const { latitude: lat, longitude: lon } = await geolocation();
+
+      // Confirma a URL antes de enviar
+      const url = `/api/weather?lat=${lat}&lon=${lon}`;
+      console.log("Fetching URL:", url);
+
+      const response = await fetch(url);
       const data = await response.json();
+
       if (data) {
         setWeather(data.results);
-        setLoading(false);
       }
     } catch (error) {
       console.error("Erro ao buscar por localização", error);
+    } finally {
+      setLoading(false);
     }
   }
 
