@@ -24,7 +24,7 @@ function App() {
       try {
         setLoading(true);
         const response = await fetch(
-          `https://api.hgbrasil.com/weather?city_name=${city}&key=${API_KEY}`
+          fetch(`/api/weather?city=${city}`)
         );
         const data = await response.json();
         if (data) {
@@ -43,7 +43,7 @@ function App() {
       try {
         const { lat, lon } = await geolocation();
         const response = await fetch(
-          `https://api.hgbrasil.com/weather?format=json-cors&key=${API_KEY}&lat=${lat}&lon=${lon}`
+          fetch(`/api/weather?lat=${lat}&lon=${lon}`)
         );
         const data = await response.json();
         if (data) {
