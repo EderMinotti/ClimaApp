@@ -24,7 +24,7 @@ function App() {
       try {
         setLoading(true);
         const response = await fetch(
-          `/api/weather?city_name=${city}&key=${API_KEY}`
+          `https://api.hgbrasil.com/weather?city_name=${city}&key=${API_KEY}`
         );
         const data = await response.json();
         if (data) {
