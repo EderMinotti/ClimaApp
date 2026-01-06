@@ -1,0 +1,16 @@
+.card {
+    text-align: center;
+    margin:2px;
+    border-radius: 12px;
+    background-color: #005f99;
+}
+
+.card img {
+    position: relative;
+    top: -20px;
+}
+
+.card p {
+    position: relative;
+    top: -20px;
+}
