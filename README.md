@@ -3,13 +3,17 @@
 
 # Climapp
 
-App de clima que consome uma API e exibe informações como temperatura e data atual, descrição do tempo, umidade, máx e min e previsão para os três próximos dias.
+App de clima que consome uma API e exibe informações como temperatura e data atual, descrição do tempo, umidade, máx e min e previsão para o dia atual e o proximo dia.
 
 ## 🔨 Funcionalidades do projeto
 
-O App permite buscar uma cidade, qualquer cidade do Brasil, e mostra a temperatura atual, exibe um ícone mostrando o tempo, descrição do clima, umidade, temperaturas máximas e mínimas e previsão para os próximos três dias. 
+O App permite buscar uma cidade, qualquer cidade do Brasil, e mostra a temperatura atual, exibe um ícone mostrando o tempo, descrição do clima, umidade, temperaturas máximas e mínimas e previsão para o dia atual e o proximo dia. 
 
-![](img4.png)
+![](img.png)
+
+O app tambem permite que você busque por uma cidade usando a sua localização atual.
+
+![](localizacao.png)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
