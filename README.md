@@ -7,7 +7,7 @@ App de clima que consome uma API e exibe informações como temperatura e data a
 
 ## 🔨 Funcionalidades do projeto
 
-O App permite buscar uma cidade, qualquer cidade do Brasil, e mostra a temperatura atual, exibe um ícone mostrando o tempo, descrição do clima, umidade, temperaturas máximas e mínimas e previsão para o dia atual e o proximo dia. 
+O App permite buscar qualquer cidade do Brasil, e mostra a temperatura atual, exibe um ícone mostrando o tempo, descrição do clima, umidade, temperaturas máximas e mínimas e previsão para o dia atual e o proximo dia. 
 
 ![](img.png)
 
